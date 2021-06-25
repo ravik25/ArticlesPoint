@@ -17,5 +17,5 @@ $ npm install
 Run app
 
 ```sh
-$ npm start
+$ node app
 ```
