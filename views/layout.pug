@@ -1,0 +1,42 @@
+doctype html
+html
+ head
+  title Article Point
+  link(rel="stylesheet" href="/bootstrap/bootstrap.css")
+  link(rel="stylesheet" href="/css/style.css")
+ body
+  nav.navbar.navbar-expand-lg.navbar-light.bg-light
+   h3 Articles Point
+   button.navbar-toggler(type='button', data-toggle='collapse', data-target='#navbarSupportedContent', aria-controls='navbarSupportedContent', aria-expanded='false', aria-label='Toggle navigation')
+    span.navbar-toggler-icon
+   .collapse.navbar-collapse(id='navbarSupportedContent')
+    ul.navbar-nav.ml-auto
+     li.nav-item.active
+      a.nav-link(href='/') Home
+     if user
+      li.nav-item
+       a.nav-link(href='/articles/add') Add Articles
+      li.nav-item
+       a.nav-link(href='/authors') Authors
+      li.nav-item
+       a.nav-link(href='/logout') Logout 
+     else 
+      li.nav-item
+       a.nav-link(href='/register') Register
+      li.nav-item
+       a.nav-link(href='/login') Login 
+  .container
+   != messages('message', locals)
+   if errors
+    each error, i in errors
+     div #{error.msg}
+   block content
+   br
+   hr
+   footer 
+    p Copyright &copy;
+  script(src='https://code.jquery.com/jquery-3.5.1.slim.min.js' integrity='sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj' crossorigin='anonymous')
+  script(src="/js/main.js")  
+  script(src='https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js' integrity='sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx' crossorigin='anonymous')
+  script(src="/bootstrapjq/jquery.js")
+  script(src="/bootstrapj/bootstrap.js") 

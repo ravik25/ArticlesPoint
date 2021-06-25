@@ -1,0 +1,12 @@
+extends layout
+
+block content
+
+ h1.text-center.text-uppercase= article.title
+ h4.text-center by #{article.author}
+ h6.font-weight-bold= article.body
+ br
+ if user
+  if user.id == article.author
+   a.mr-5(href='/article/edit/'+article._id).btn.btn-primary Edit
+   a(href='#',data-id=article._id).btn.btn-danger.delete-article Delete

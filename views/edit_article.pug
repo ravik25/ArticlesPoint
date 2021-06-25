@@ -1,0 +1,15 @@
+extends layout
+
+block content
+ 
+ h1 #{title}
+ form(method="POST" action="/article/edit/"+article._id)
+  label(for="tit") Title
+  input(type="text" name="title" id="tit" class="form-control" placeholder="..." required value=article.title)
+  label(for="texta") Body
+  textarea(id="texta" class="form-control" name="body" required)=article.body
+  <br>
+  input(type="submit" value="submit" class="btn btn-primary")
+  
+   
+   

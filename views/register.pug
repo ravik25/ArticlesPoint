@@ -1,0 +1,17 @@
+extends layout
+
+block content
+ 
+ h1.text-center Register
+ form(method="POST" action="/register")
+  label(for="nam") Name
+  input(type="text" name="name" id="nam" class="form-control" placeholder="..." required)
+  label(for="ema") email
+  input(type="email" name="email" id="ema" class="form-control" placeholder="..." required)
+  label(for="use") Username
+  input(type="text" name="username" id="use" class="form-control" placeholder="..." required)
+  label(for="pas") Password
+  input(type="password" name="password" id="pas" class="form-control" placeholder="..." required)
+  <br>
+  input(type="submit" value="submit" class="btn btn-primary")
+   
